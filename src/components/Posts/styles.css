@@ -1,0 +1,10 @@
+.postTitle {
+  color: antiquewhite;
+  background: black;
+}
+
+.postSubTitle {
+  color: black;
+  background: whitesmoke;
+  margin-bottom: 1rem;
+}
