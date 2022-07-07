@@ -1,6 +1,13 @@
+.PostsNotFound {
+  color: black;
+  background: wheat;
+}
+
 .postTitle {
   color: antiquewhite;
   background: black;
+  margin-top: 1rem;
+
 }
 
 .postSubTitle {

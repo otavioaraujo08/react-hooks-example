@@ -1,8 +1,10 @@
-import * as types from './types'
+import * as types from './types';
 
 export const loadPosts = async (dispatch) => {
-  const postRaw = await fetch("https://jsonplaceholder.typicode.com/posts")
-  const posts = await postRaw.json()
+  dispatch({ type: types.POST_LOADING });
 
-  dispatch({ type: types.POST_SUCCESS, payload: posts })
-}
+  const postRaw = await fetch('https://jsonplaceholder.typicode.com/posts');
+  const posts = await postRaw.json();
+
+  return () => dispatch({ type: types.POST_SUCCESS, payload: posts });
+};

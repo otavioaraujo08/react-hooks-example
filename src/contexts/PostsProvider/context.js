@@ -1,3 +1,3 @@
-const { createContext } = require("react");
+const { createContext } = require('react');
 
-export const PostsContext = createContext()
+export const PostsContext = createContext();
