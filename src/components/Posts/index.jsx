@@ -5,11 +5,17 @@ import { loadPosts } from '../../contexts/PostsProvider/actions';
 
 import './styles.css';
 import { useRef } from 'react';
+import { CounterContext } from '../../contexts/CounterProvider/context';
+import { decrementCounter, incrementCounter } from '../../contexts/CounterProvider/action';
 
 export const Posts = () => {
   const isMounted = useRef(true);
+
   const postsContext = useContext(PostsContext);
   const { postsState, postsDispatch } = postsContext;
+
+  const counterContext = useContext(CounterContext);
+  const { counterState, counterDispatch } = counterContext;
 
   console.log(isMounted);
 
@@ -25,6 +31,12 @@ export const Posts = () => {
 
   return (
     <div>
+      <div>
+        <h1>{counterState.counter}</h1>
+      </div>
+      <button onClick={() => incrementCounter(counterDispatch)}>Incrementar Valor </button>
+      <button onClick={() => decrementCounter(counterDispatch)}>Decrementar Valor </button>
+
       <h1>Posts</h1>
       {postsState.loading && (
         <div className="PostsNotFound">
